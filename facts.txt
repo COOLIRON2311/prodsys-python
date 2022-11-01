@@ -25,7 +25,7 @@ f23;Coal;
 f24;Wooden Pickaxe;
 f25;Stone Pickaxe;
 f26;Iron Pickaxe;
-f26;Golden Pickaxe;
+f102;Golden Pickaxe;
 f27;Diamond Pickaxe;
 
 f28;Wooden Shovel;
@@ -112,3 +112,5 @@ f97;Golden Apple;
 f98;Jukebox;
 f99;Piston;
 f100;Minecart;
+f101;String;
+f102;Book;

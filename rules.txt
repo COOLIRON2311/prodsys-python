@@ -1,0 +1,102 @@
+r1; f1; f2; 1; Wood -> Planks
+r2; f2; f3; 1; Planks -> Stick
+r3; f2; f4; 1; Planks -> Workbench
+r4; f2; f5; 1; Planks -> Chest
+r5; f6; f7; 1; Stone -> Furnace
+r6; f3; f8; 1; Stick -> Ladder
+r7; f2, f3; f9; 1; Planks, Stick -> Fence
+r8; f2; f10; 1; Planks -> Boat
+r9; f2; 11; 1; Planks -> Wooden Slabs
+r10; f6; f12; 1; Stone -> Stone Slabs
+r11; f2, f3; f13; 1; Planks, Stick -> Sign
+r12; f2; f14; 1; Planks -> Wooden Door
+r13; f15; f16; 1; Iron Ingot -> Iron Door
+r14; f3, f17; f18; 1; Stick, Wool -> Painting
+r15; f2, f17; f19; 1; Planks, Wool -> Bed
+
+r16; f2, f3; f24; 1; Planks, Stick -> Wooden Pickaxe
+r17; f2, f6; f25; 1; Planks, Stone -> Stone Pickaxe
+r18; f2, f15; f26; 1; Planks, Iron Ingot -> Iron Pickaxe
+r19; f2, f21; f102; 1; Planks, Gold Ingot -> Gold Pickaxe
+r20; f2, f22; f27; 1; Planks, Diamond -> Diamond Pickaxe
+
+r21; f2, f3; f28; 1; Planks, Stick -> Wooden Shovel
+r22; f2, f6; f29; 1; Planks, Stone -> Stone Shovel
+r23; f2, f15; f30; 1; Planks, Iron Ingot -> Iron Shovel
+r24; f2, f21; f31; 1; Planks, Gold Ingot -> Gold Shovel
+r25; f2, f22; f32; 1; Planks, Diamond -> Diamond Shovel
+
+r26; f2, f3; f33; 1; Planks, Stick -> Wooden Axe
+r27; f2, f6; f34; 1; Planks, Stone -> Stone Axe
+r28; f2, f15; f35; 1; Planks, Iron Ingot -> Iron Axe
+r29; f2, f21; f36; 1; Planks, Gold Ingot -> Gold Axe
+r30; f2, f22; f37; 1; Planks, Diamond -> Diamond Axe
+
+r31; f2, f3; f38; 1; Planks, Stick -> Wooden Hoe
+r32; f2, f6; f39; 1; Planks, Stone -> Stone Hoe
+r33; f2, f15; f40; 1; Planks, Iron Ingot -> Iron Hoe
+r34; f2, f21; f41; 1; Planks, Gold Ingot -> Gold Hoe
+r35; f2, f22; f42; 1; Planks, Diamond -> Diamond Hoe
+
+r36; f2, f3; f43; 1; Planks, Stick -> Wooden Sword
+r37; f2, f6; f44; 1; Planks, Stone -> Stone Sword
+r38; f2, f15; f45; 1; Planks, Iron Ingot -> Iron Sword
+r39; f2, f21; f46; 1; Planks, Gold Ingot -> Gold Sword
+r40; f2, f22; f47; 1; Planks, Diamond -> Diamond Sword
+
+r41; f3, f101; f49; 1; Stick, String -> Fishing Rod
+r42; f15, f50; f51; 1; Iron Ingot, Flint -> Flint and Steel
+r43; f15; f52; 1; Iron Ingot -> Shears
+r44; f15; f53; 1; Iron Ingot -> Bucket
+r45; f3, f15; f54; 1; Stick, Iron Ingot -> Track
+r46; f20, f21; f55; 1; Redstone, Gold Ingot -> Clock
+r47; f15, f20; f56; 1; Iron Ingot, Redstone -> Compass
+
+r48; f57; f58; 1; Sugar Cane -> Paper
+r49; f56, f58; f59; 1; Compass, Paper -> Map
+r50; f15; f60; 1; Iron Ingot -> Iron Bars
+r51; f22, f61, f102; f62; 1; Diamond, Obsidian, Book -> Enchantment Table
+r52; f2, f102; f63; 1; Planks, Book -> Bookshelf
+r53; f1, f2, f23; f64; 1; Wood, Stick, Coal -> Campfire
+r54; f2, f11; f65; 1; Planks, Wooden 1; Slabs -> Barrel
+r55; f1, f7; f66; 1; Wood, Furnace -> Smoker
+r56; f2, f58; f67; 1; Planks, Paper -> Cartography Table
+r57; f2, f50; f68; 1; Planks, Flint -> Fletching Table
+r58; f11; f69; 1; Wooden Slabs -> Composter
+r59; f2; f60; f70; 1; Planks, Iron Ingot -> Smithing Table
+r60; f11; f63; f71; 1; Wooden Slabs, Bookshelf -> Lectern
+r61; f2, f101; f72; 1; Planks, String -> Loom
+r62; f3, f48; f73; 1; Stick, Leather -> Item Frame
+r63; f5, f10; f74; 1; Chest, Boat -> Boat with Chest
+
+r64; f48; f75; 1; Leather -> Leather Helmet
+r65; f48; f76; 1; Leather -> Leather Chestplate
+r66; f48; f77; 1; Leather -> Leather Leggings
+r67; f48; f78; 1; Leather -> Leather Boots
+
+r68; f15; f79; 1; Iron Ingot -> Iron Helmet
+r69; f15; f80; 1; Iron Ingot -> Iron Chestplate
+r70; f15; f81; 1; Iron Ingot -> Iron Leggings
+r71; f15; f82; 1; Iron Ingot -> Iron Boots
+
+r72; f21; f83; 1; Gold Ingot -> Gold Helmet
+r73; f21; f84; 1; Gold Ingot -> Gold Chestplate
+r74; f21; f85; 1; Gold Ingot -> Gold Leggings
+r75; f21; f86; 1; Gold Ingot -> Gold Boots
+
+r76; f22; f87; 1; Diamond -> Diamond Helmet
+r77; f22; f88; 1; Diamond -> Diamond Chestplate
+r78; f22; f89; 1; Diamond -> Diamond Leggings
+r79; f22; f90; 1; Diamond -> Diamond Boots
+
+r80; f2; f15; f91; 1; Planks, Iron Ingot -> Shield
+r81; f3; f101; f92; 1; Stick, String -> Bow
+r82; f3, f50, f58; f93; 1; Stick, Flint, Feather -> Arrow
+r83; f2, f3, f15; f94; 1; Planks, Stick, Iron Ingot -> Tripwire Hook
+r84; f3, f15, f94, f101; f95; 1; Stick, Iron Ingot, Tripwire Hook, String -> Crossbow
+
+r85; f21, f96; f97; 1; Golden Ingot, Apple -> Golden Apple
+r86; f2, f22; f98; 1; Planks, Diamond -> Jukebox
+r87; f2, f6, f15, f20; f99; 1; Planks, Stone, Iron Ingot, Redstone -> Piston
+r88; f15; f100; 1; Iron Ingot -> Minecart
+r89; f48, f58; f102; 1; Leather, Paper -> Book
