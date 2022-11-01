@@ -1,0 +1,114 @@
+f1;Wood;
+f2;Planks;
+f3;Stick;
+f4;Workbench;
+f5;Chest;
+f6;Stone;
+f7;Furnace;
+f8;Ladder;
+f9;Fence;
+f10;Boat;
+f11;Wooden Slabs;
+f12;Stone Slabs;
+f13;Sign;
+f14;Wooden Door;
+f15;Iron Ingot;
+f16;Iron Door;
+f17;Wool;
+f18;Painting;
+f19;Bed;
+f20;Redstone;
+f21;Gold Ingot;
+f22;Diamond;
+
+f23;Coal;
+f24;Wooden Pickaxe;
+f25;Stone Pickaxe;
+f26;Iron Pickaxe;
+f26;Golden Pickaxe;
+f27;Diamond Pickaxe;
+
+f28;Wooden Shovel;
+f29;Stone Shovel;
+f30;Iron Shovel;
+f31;Golden Shovel;
+f32;Diamond Shovel;
+
+f33;Wooden Axe;
+f34;Stone Axe;
+f35;Iron Axe;
+f36;Golden Axe;
+f37;Diamond Axe;
+
+f38;Wooden Hoe;
+f39;Stone Hoe;
+f40;Iron Hoe;
+f41;Golden Hoe;
+f42;Diamond Hoe;
+
+f43;Wooden Sword;
+f44;Stone Sword;
+f45;Iron Sword;
+f46;Golden Sword;
+f47;Diamond Sword;
+
+f48;Leather;
+f49;Fishing Rod;
+f50;Flint;
+f51;Flint and Steel;
+f52;Shears;
+f53;Bucket;
+f54;Track;
+f55;Clock;
+f56;Compass;
+f57;Sugar Cane;
+
+f58;Paper;
+f59;Map;
+f60;Iron Bars;
+f61;Obsidian;
+f62;Enchantment Table;
+f63;Bookshelf;
+f64;Campfire;
+f65;Barrel;
+f66;Smoker;
+f67;Cartography Table;
+f68;Fletching Table;
+f69;Composter;
+f70;Smithing Table;
+f71;Lectern;
+f72;Loom;
+f73;Item Frame;
+f74;Boat with Chest;
+
+f75;Leather Helmet;
+f76;Leather Chestplate;
+f77;Leather Leggings;
+f78;Leather Boots;
+
+f79;Iron Helmet;
+f80;Iron Chestplate;
+f81;Iron Leggings;
+f82;Iron Boots;
+
+f83;Golden Helmet;
+f84;Golden Chestplate;
+f85;Golden Leggings;
+f86;Golden Boots;
+
+f87;Diamond Helmet;
+f88;Diamond Chestplate;
+f89;Diamond Leggings;
+f90;Diamond Boots;
+
+f91;Shield;
+f92;Bow;
+f93;Feather;
+f93;Arrow;
+f94;Tripwire Hook;
+f95;Crossbow;
+f96;Apple;
+f97;Golden Apple;
+f98;Jukebox;
+f99;Piston;
+f100;Minecart;
