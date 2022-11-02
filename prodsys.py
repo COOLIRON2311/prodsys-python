@@ -1,15 +1,16 @@
 import tkinter as tk
+from queue import Queue
 
 
 class Fact:
     iid: str
     desc: str
-    atom: bool
+    is_atom: bool
 
     def __init__(self, _id: str, desc: str):
         self.iid = _id
         self.desc = desc
-        self.atom = False
+        self.is_atom = False
 
     def __repr__(self) -> str:
         return self.desc
@@ -22,6 +23,7 @@ class Fact:
 
     def __hash__(self) -> int:
         return hash(self.desc)
+
 
 class Rule:
     iid: str
@@ -49,6 +51,11 @@ class Rule:
     def __hash__(self) -> int:
         return hash(self.desc)
 
+    @property
+    def reverse_desc(self):
+        return ' -> '.join(self.desc.split(' -> ')[::-1])
+
+
 class App(tk.Tk):
     facts: list[Fact]
     rules: list[Rule]
@@ -57,7 +64,7 @@ class App(tk.Tk):
         super().__init__()
         self.title('Production System')
         self.resizable(False, False)
-        self.geometry('540x400')
+        self.geometry('600x400')
         self.facts = []
         self.rules = []
         self.load_facts()
@@ -102,7 +109,7 @@ class App(tk.Tk):
     def set_atoms(self):
         for fact in self.facts:
             if not any(fact.iid in rule.rhs for rule in self.rules):
-                fact.atom = True
+                fact.is_atom = True
                 # print(fact)
 
     def _open_status(self):
@@ -141,7 +148,26 @@ class App(tk.Tk):
         self._close_status()
 
     def reverse(self):
-        pass
+        facts = {self.facts[i] for i in self.factbox.curselection()}
+        all_facts = {fact.iid: fact for fact in self.facts}
+        s: list[Fact] = []
+        for fact in facts:
+            s.append(fact)
+
+        self._clear_status()
+        self._open_status()
+
+        while s:
+            fact = s.pop()
+            if fact.is_atom:
+                self.status.insert(tk.END, f'{fact}\n')
+            else:
+                for rule in self.rules:
+                    if fact.iid in rule.rhs:
+                        self.status.insert(tk.END, f'{rule.reverse_desc}\n')
+                        # print(rule.reverse_desc)
+                        for lhs in rule.lhs:
+                            s.append(all_facts[lhs])
 
     def run(self):
         self.mainloop()
