@@ -21,28 +21,28 @@ r19; f2, f21; f102; 1; Planks, Gold Ingot -> Gold Pickaxe
 r20; f2, f22; f27; 1; Planks, Diamond -> Diamond Pickaxe
 
 r21; f2, f3; f28; 1; Planks, Stick -> Wooden Shovel
-r22; f2, f6; f29; 1; Planks, Stone -> Stone Shovel
-r23; f2, f15; f30; 1; Planks, Iron Ingot -> Iron Shovel
-r24; f2, f21; f31; 1; Planks, Gold Ingot -> Gold Shovel
-r25; f2, f22; f32; 1; Planks, Diamond -> Diamond Shovel
+r22; f3, f6; f29; 1; Stick, Stone -> Stone Shovel
+r23; f3, f15; f30; 1; Stick, Iron Ingot -> Iron Shovel
+r24; f3, f21; f31; 1; Stick, Gold Ingot -> Gold Shovel
+r25; f3, f22; f32; 1; Stick, Diamond -> Diamond Shovel
 
 r26; f2, f3; f33; 1; Planks, Stick -> Wooden Axe
-r27; f2, f6; f34; 1; Planks, Stone -> Stone Axe
-r28; f2, f15; f35; 1; Planks, Iron Ingot -> Iron Axe
-r29; f2, f21; f36; 1; Planks, Gold Ingot -> Gold Axe
-r30; f2, f22; f37; 1; Planks, Diamond -> Diamond Axe
+r27; f3, f6; f34; 1; Stick, Stone -> Stone Axe
+r28; f3, f15; f35; 1; Stick, Iron Ingot -> Iron Axe
+r29; f3, f21; f36; 1; Stick, Gold Ingot -> Gold Axe
+r30; f3, f22; f37; 1; Stick, Diamond -> Diamond Axe
 
 r31; f2, f3; f38; 1; Planks, Stick -> Wooden Hoe
-r32; f2, f6; f39; 1; Planks, Stone -> Stone Hoe
-r33; f2, f15; f40; 1; Planks, Iron Ingot -> Iron Hoe
-r34; f2, f21; f41; 1; Planks, Gold Ingot -> Gold Hoe
-r35; f2, f22; f42; 1; Planks, Diamond -> Diamond Hoe
+r32; f3, f6; f39; 1; Stick, Stone -> Stone Hoe
+r33; f3, f15; f40; 1; Stick, Iron Ingot -> Iron Hoe
+r34; f3, f21; f41; 1; Stick, Gold Ingot -> Gold Hoe
+r35; f3, f22; f42; 1; Stick, Diamond -> Diamond Hoe
 
 r36; f2, f3; f43; 1; Planks, Stick -> Wooden Sword
-r37; f2, f6; f44; 1; Planks, Stone -> Stone Sword
-r38; f2, f15; f45; 1; Planks, Iron Ingot -> Iron Sword
-r39; f2, f21; f46; 1; Planks, Gold Ingot -> Gold Sword
-r40; f2, f22; f47; 1; Planks, Diamond -> Diamond Sword
+r37; f3, f6; f44; 1; Stick, Stone -> Stone Sword
+r38; f3, f15; f45; 1; Stick, Iron Ingot -> Iron Sword
+r39; f3, f21; f46; 1; Stick, Gold Ingot -> Gold Sword
+r40; f3, f22; f47; 1; Stick, Diamond -> Diamond Sword
 
 r41; f3, f101; f49; 1; Stick, String -> Fishing Rod
 r42; f15, f50; f51; 1; Iron Ingot, Flint -> Flint and Steel
@@ -100,3 +100,4 @@ r86; f2, f22; f98; 1; Planks, Diamond -> Jukebox
 r87; f2, f6, f15, f20; f99; 1; Planks, Stone, Iron Ingot, Redstone -> Piston
 r88; f15; f100; 1; Iron Ingot -> Minecart
 r89; f48, f58; f102; 1; Leather, Paper -> Book
+r90; f2; f11; 1; Planks -> Wooden Slabs
