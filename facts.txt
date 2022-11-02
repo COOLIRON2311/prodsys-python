@@ -25,7 +25,7 @@ f23;Coal;
 f24;Wooden Pickaxe;
 f25;Stone Pickaxe;
 f26;Iron Pickaxe;
-f102;Golden Pickaxe;
+f103;Golden Pickaxe;
 f27;Diamond Pickaxe;
 
 f28;Wooden Shovel;
