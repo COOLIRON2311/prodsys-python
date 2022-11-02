@@ -58,13 +58,13 @@ r50; f15; f60; 1; Iron Ingot -> Iron Bars
 r51; f22, f61, f102; f62; 1; Diamond, Obsidian, Book -> Enchantment Table
 r52; f2, f102; f63; 1; Planks, Book -> Bookshelf
 r53; f1, f2, f23; f64; 1; Wood, Stick, Coal -> Campfire
-r54; f2, f11; f65; 1; Planks, Wooden 1; Slabs -> Barrel
+r54; f2, f11; f65; 1; Planks, Wooden Slabs -> Barrel
 r55; f1, f7; f66; 1; Wood, Furnace -> Smoker
 r56; f2, f58; f67; 1; Planks, Paper -> Cartography Table
 r57; f2, f50; f68; 1; Planks, Flint -> Fletching Table
 r58; f11; f69; 1; Wooden Slabs -> Composter
-r59; f2; f60; f70; 1; Planks, Iron Ingot -> Smithing Table
-r60; f11; f63; f71; 1; Wooden Slabs, Bookshelf -> Lectern
+r59; f2, f60; f70; 1; Planks, Iron Ingot -> Smithing Table
+r60; f11, f63; f71; 1; Wooden Slabs, Bookshelf -> Lectern
 r61; f2, f101; f72; 1; Planks, String -> Loom
 r62; f3, f48; f73; 1; Stick, Leather -> Item Frame
 r63; f5, f10; f74; 1; Chest, Boat -> Boat with Chest
@@ -89,8 +89,8 @@ r77; f22; f88; 1; Diamond -> Diamond Chestplate
 r78; f22; f89; 1; Diamond -> Diamond Leggings
 r79; f22; f90; 1; Diamond -> Diamond Boots
 
-r80; f2; f15; f91; 1; Planks, Iron Ingot -> Shield
-r81; f3; f101; f92; 1; Stick, String -> Bow
+r80; f2, f15; f91; 1; Planks, Iron Ingot -> Shield
+r81; f3, f101; f92; 1; Stick, String -> Bow
 r82; f3, f50, f58; f93; 1; Stick, Flint, Feather -> Arrow
 r83; f2, f3, f15; f94; 1; Planks, Stick, Iron Ingot -> Tripwire Hook
 r84; f3, f15, f94, f101; f95; 1; Stick, Iron Ingot, Tripwire Hook, String -> Crossbow
