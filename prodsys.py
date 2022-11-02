@@ -20,6 +20,8 @@ class Fact:
         _id, desc, _ = map(str.strip, data.split(';'))
         return Fact(_id, desc)
 
+    def __hash__(self) -> int:
+        return hash(self.desc)
 
 class Rule:
     iid: str
@@ -40,8 +42,12 @@ class Rule:
     def parse(data: str) -> 'Rule':
         # print(data)
         _id, lhs, rhs, _, desc = map(str.strip, data.split(';'))
-        return Rule(_id, desc, set(lhs.split(',')), set((rhs, )))
+        lhs = set(map(str.strip, lhs.split(',')))
+        rhs = set(map(str.strip, rhs.split(',')))
+        return Rule(_id, desc, lhs, rhs)
 
+    def __hash__(self) -> int:
+        return hash(self.desc)
 
 class App(tk.Tk):
     facts: list[Fact]
@@ -118,7 +124,21 @@ class App(tk.Tk):
         self.factbox.selection_clear(0, tk.END)
 
     def direct(self):
-        pass
+        facts = {self.facts[i].iid for i in self.factbox.curselection()}
+        prev_step = facts.copy()
+        cur_step = facts.copy()
+        self._clear_status()
+        self._open_status()
+
+        while True:
+            for rule in self.rules:
+                if rule.lhs.issubset(prev_step) and not rule.rhs.issubset(cur_step):
+                    cur_step.update(rule.rhs)
+                    self.status.insert(tk.END, f'{rule}\n')
+            if cur_step == prev_step:
+                break
+            prev_step = cur_step.copy()
+        self._close_status()
 
     def reverse(self):
         pass
