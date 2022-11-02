@@ -81,14 +81,14 @@ class App(tk.Tk):
         self.factbox.config(yscrollcommand=self.scroll1.set)
 
     def load_facts(self, path: str = 'facts.txt'):
-        with open(path) as f:
+        with open(path, encoding='utf8') as f:
             for line in f:
                 if line and not line.startswith('\n'):
                     self.facts.append(Fact.parse(line))
         self.facts.sort(key=str)
 
     def load_rules(self, path: str = 'rules.txt'):
-        with open(path) as f:
+        with open(path, encoding='utf8') as f:
             for line in f:
                 if line and not line.startswith('\n'):
                     self.rules.append(Rule.parse(line))
