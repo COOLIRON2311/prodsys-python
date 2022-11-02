@@ -1,5 +1,4 @@
 import tkinter as tk
-from queue import Queue
 
 
 class Fact:
@@ -63,7 +62,7 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title('Production System')
-        self.resizable(False, False)
+        self.minsize(600, 400)
         self.geometry('600x400')
         self.facts = []
         self.rules = []
@@ -84,11 +83,11 @@ class App(tk.Tk):
         self.directb = tk.Button(self.frame2, text='Прямой Вывод', command=self.direct)
         self.reverseb = tk.Button(self.frame2, text='Обратный Вывод', command=self.reverse)
 
-        self.frame1.pack(side='top', padx=10, pady=10)
+        self.frame1.pack(side='top', padx=10, pady=10, fill='both', expand=True)
         self.frame2.pack(side='bottom', padx=10, pady=10)
         self.factbox.pack(side='left', fill='both')
         self.scroll1.pack(side='left', fill='y')
-        self.status.pack(side='left', fill='both')
+        self.status.pack(side='left', fill='both', expand=True)
         self.directb.pack(side='left', padx=1)
         self.reverseb.pack(side='left', padx=1)
         self.factbox.config(yscrollcommand=self.scroll1.set)
