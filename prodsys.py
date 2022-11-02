@@ -51,7 +51,7 @@ class App(tk.Tk):
         super().__init__()
         self.title('Production System')
         self.resizable(False, False)
-        self.geometry('500x400')
+        self.geometry('540x400')
         self.facts = []
         self.rules = []
         self.load_facts()
@@ -59,6 +59,7 @@ class App(tk.Tk):
         self.set_atoms()
         self.create_widgets()
         self.factbox.insert(tk.END, *self.facts)
+        self.reset()
         self.bind('<Escape>', self.reset)
 
     def create_widgets(self):
@@ -98,8 +99,22 @@ class App(tk.Tk):
                 fact.atom = True
                 # print(fact)
 
-    def reset(self, *_):
+    def _open_status(self):
+        self.status.configure(state=tk.NORMAL)
+
+    def _close_status(self):
+        self.status.configure(state=tk.DISABLED)
+
+    def _clear_status(self):
+        self._open_status()
         self.status.delete(1.0, tk.END)
+        self._close_status()
+
+    def reset(self, *_):
+        self._open_status()
+        self.status.delete(1.0, tk.END)
+        self.status.insert(tk.END, 'Выберите факты и нажмите кнопку')
+        self._close_status()
         self.factbox.selection_clear(0, tk.END)
 
     def direct(self):
