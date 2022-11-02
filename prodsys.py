@@ -2,12 +2,12 @@ import tkinter as tk
 
 
 class Fact:
-    _id: str
+    iid: str
     desc: str
     atom: bool
 
     def __init__(self, _id: str, desc: str):
-        self._id = _id
+        self.iid = _id
         self.desc = desc
         self.atom = False
 
@@ -22,13 +22,13 @@ class Fact:
 
 
 class Rule:
-    _id: str
+    iid: str
     desc: str
     lhs: set[str]
     rhs: set[str]
 
     def __init__(self, _id: str, desc: str, lhs: set[str], rhs: set[str]):
-        self._id = _id
+        self.iid = _id
         self.desc = desc
         self.lhs = lhs
         self.rhs = rhs
@@ -56,6 +56,7 @@ class App(tk.Tk):
         self.rules = []
         self.load_facts()
         self.load_rules()
+        self.set_atoms()
         self.create_widgets()
         self.factbox.insert(tk.END, *self.facts)
         self.bind('<Escape>', self.reset)
@@ -65,7 +66,7 @@ class App(tk.Tk):
         self.frame2 = tk.Frame(self)
         self.factbox = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE)
         self.scroll1 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.factbox.yview)
-        self.status = tk.Text(self.frame1, width=40, height=20)
+        self.status = tk.Text(self.frame1, width=40, height=20, state=tk.DISABLED)
         self.directb = tk.Button(self.frame2, text='Прямой Вывод', command=self.direct)
         self.reverseb = tk.Button(self.frame2, text='Обратный Вывод', command=self.reverse)
 
@@ -76,18 +77,26 @@ class App(tk.Tk):
         self.status.pack(side='left', fill='both')
         self.directb.pack(side='left', padx=1)
         self.reverseb.pack(side='left', padx=1)
+        self.factbox.config(yscrollcommand=self.scroll1.set)
 
     def load_facts(self, path: str = 'facts.txt'):
         with open(path) as f:
             for line in f:
                 if line and not line.startswith('\n'):
                     self.facts.append(Fact.parse(line))
+        self.facts.sort(key=str)
 
     def load_rules(self, path: str = 'rules.txt'):
         with open(path) as f:
             for line in f:
                 if line and not line.startswith('\n'):
                     self.rules.append(Rule.parse(line))
+
+    def set_atoms(self):
+        for fact in self.facts:
+            if not any(fact.iid in rule.rhs for rule in self.rules):
+                fact.atom = True
+                # print(fact)
 
     def reset(self, *_):
         self.status.delete(1.0, tk.END)
