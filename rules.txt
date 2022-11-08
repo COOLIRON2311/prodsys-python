@@ -101,3 +101,70 @@ r87; f2, f6, f15, f20; f99; 1; Planks, Stone, Iron Ingot, Redstone -> Piston
 r88; f15; f100; 1; Iron Ingot -> Minecart
 r89; f48, f58; f102; 1; Leather, Paper -> Book
 r90; f2; f11; 1; Planks -> Wooden Slabs
+
+r91; f57; f108; 1; Sugar Cane -> Sugar
+r92; f21; f111; f112; 1; Gold Ingot, Melon Slice -> Glistering Melon Slice
+r93; f110; f115; f116; 1; Blaze Powder, Slimeball -> Magma Cream
+r94; f21; f117; f118; 1; Gold Ingot, Carrot -> Golden Carrot
+r95; f122; f108; f113; f123; 1; Brown Mushroom, Sugar, Spider Eye -> Fermented Spider Eye
+r96; f104; f125; 1; Sand -> Glass
+
+r97; f125; f126; 1; Glass -> Glass Bottle 
+r98; f124; f126; f127; 1; Water, Glass Bottle -> Water Bottle
+r99; f105; f127; f128; 1; Nether Wart, Water Bottle -> Awkward Potion 
+r100; f106; f127; f129; 1; Gunpowder, Water Bottle -> Splash Potion 
+r101; f113; f127; f130; 1; Spider Eye, Water Bottle -> Mundane Potion
+r102; f119; f127; f130; 1; Ghast Tear, Water Bottle -> Mundane Potion
+r103; f109; f127; f130; 1; Rabbits Foot, Water Bottle -> Mundane Potion
+r104; f110; f127; f130; 1; Blaze Powder, Water Bottle -> Mundane Potion
+r105; f112; f127; f130; 1; Glistering Melon Slice, Water Bottle -> Mundane Potion
+r106; f108; f127; f130; 1; Sugar, Water Bottle -> Mundane Potion
+r107; f116; f127; f130; 1; Magma Cream, Water Bottle -> Mundane Potion
+r108; f20; f127; f130; 1; Redstone, Water Bottle -> Mundane Potion  
+r109; f107; f127; f130; 1; Glowstone Dust, Water Bottle -> Thick Potion
+
+r110; f108; f128; f132; 1; Sugar, Awkward Potion -> Potion of Swiftness
+r111; f123; f132; f133; 1; Fermented Spider Eye, Potion of Swiftness -> Potion of Slowness 
+r112; f109; f128; f134; 1; Rabbits Foot, Awkward Potion -> Potion of Leaping 
+r113; f110; f128; f135; 1; Blaze Powder, Awkward Potion -> Potion of Strength
+r114; f112; f128; f136; 1; Glistering Melon Slice, Awkward Potion -> Potion of Healing
+r115; f123; f136; f137; 1; Fermented Spider Eye, Potion of Healing -> Potion of Harming 
+r116; f113; f128; f138; 1; Spider Eye, Awkward Potion -> Potion of Poison
+r117; f123; f138; f137; 1; Fermented Spider Eye, Potion of Poison -> Potion of Harming
+r118; f119; f128; f139; 1; Ghast Tear, Awkward Potion -> Potion of Regeneration
+r119; f116; f128; f140; 1; Magma Cream, Awkward Potion -> Potion of Fire Resistance
+r120; f114; f128; f141; 1; Pufferfish, Awkward Potion -> Potion of Water Breathing
+r121; f118; f128; f142; 1; Golden Carrot, Awkward Potion -> Potion of Night Vision
+r122; f123; f142; f143; 1; Fermented Spider Eye, Potion of Night Vision -> Potion of Invisibility
+r123; f120; f128; f144; 1; Turtle Shell, Awkward Potion -> Potion of Turtle Master
+r124; f121; f128; f145; 1; Phantom Membrane, Awkward Potion -> Potion of Slow Falling
+r125; f123; f127; f146; 1; Fermented Spider Eye, Water Bottle -> Potion of Weakness
+
+r126; f107; f132; f147; 1; Glowstone Dust, Potion of Swiftness -> Potion of Swiftness II
+r127; f20; f132; f148; 1; Redstone, Potion of Swiftness -> Potion of Swiftness +
+r128; f20; f133; f149; 1; Redstone, Potion of Slowness -> Potion of Slowness +
+r129; f123; f148; f149; 1; Fermented Spider Eye, Potion of Swiftness + -> Potion of Slowness +
+r130; f107; f133; f150; 1; Glowstone Dust, Potion of Slowness -> Potion of Slowness IV
+r131; f20; f134; f151; 1; Redstone, Potion of Leaping -> Potion of Leaping +
+r132; f107; f134; f152; 1; Redstone, Potion of Leaping -> Potion of Leaping II
+r133; f123; f151; f149; 1; Fermented Spider Eye, Potion of Leaping + -> Potion of Slowness +
+r134; f20; f135; f153; 1; Redstone, Potion of Strength -> Potion of Strength + 
+r135; f107; f135; f154; 1; Glowstone Dust, Potion of Strength -> Potion of Strength II
+r136; f107; f136; f155; 1; Glowstone Dust, Potion of Healing -> Potion of Healing II
+r137; f107; f137; f156; 1; Glowstone Dust, Potion of Harming -> Potion of Harming II
+r138; f123; f155; f156; 1; Fermented Spider Eye, Potion of Healing II -> Potion of Harming II
+r139; f107; f138; f157; 1; Glowstone Dust, Potion of Poison -> Potion if Poison II
+r140; f20; f138; f158; 1; Redstone, Potion of Poison -> Potion if Poison +
+r141; f123; f157; f156; 1; Fermented Spider Eye, Potion of Poison II -> Potion of Harming II
+r142; f20; f139; f159; 1; Redstone, Potion of Regeneration -> Potion of Regeneration +
+r143; f107; f139; f160; 1; Glowstone Dust, Potion of Regeneration -> Potion of Regeneration II
+r144; f20; f140; f161; 1; Redstone, Potion of Resistance -> Potion of Fire Resistance II
+r145; f20; f141; f162; 1; Redstone, Potion of Water Breathing -> Potion of Water Breathing +
+r146; f20; f142; f163; 1; Redstone, Potion of Night Vision -> Potion of Night Vision +
+r147; f20; f143; f164; 1; Redstone, Potion of Invisibility -> Potion of Invisibility +
+r148; f123; f163; f164; 1; Fermented Spider Eye, Potion of Night Vision + -> Potion of Invisibility +
+r149; f20; f144; f165; 1; Redstone, Potion of Turtle Master -> Potion of Turtle Master +
+r150; f107; f144; f166; 1; Glowstone Dust, Potion of Turtle Master -> Potion of Turtle Master II
+r151; f20; f145; f167; 1; Redstone, Potion of Slow Falling -> Potion of Slow Falling +
+r152; f20; f146; f168; 1; Redstone, Potion of Weakness -> Potion of Weakness +
+
