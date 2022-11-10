@@ -17,8 +17,11 @@ class Fact:
     @staticmethod
     def parse(data: str) -> 'Fact':
         # print(data)
-        _id, desc, _ = map(str.strip, data.split(';'))
-        return Fact(_id, desc)
+        try:
+            _id, desc, _ = map(str.strip, data.split(';'))
+            return Fact(_id, desc)
+        except ValueError as e:
+            raise ValueError(f'Invalid fact: {data}') from e
 
     def __hash__(self) -> int:
         return hash(self.desc)
@@ -42,10 +45,13 @@ class Rule:
     @staticmethod
     def parse(data: str) -> 'Rule':
         # print(data)
-        _id, lhs, rhs, _, desc = map(str.strip, data.split(';'))
-        lhs = set(map(str.strip, lhs.split(',')))
-        rhs = set(map(str.strip, rhs.split(',')))
-        return Rule(_id, desc, lhs, rhs)
+        try:
+            _id, lhs, rhs, _, desc = map(str.strip, data.split(';'))
+            lhs = set(map(str.strip, lhs.split(',')))
+            rhs = set(map(str.strip, rhs.split(',')))
+            return Rule(_id, desc, lhs, rhs)
+        except ValueError as e:
+            raise ValueError(f'Invalid rule: {data}') from e
 
     def __hash__(self) -> int:
         return hash(self.desc)
