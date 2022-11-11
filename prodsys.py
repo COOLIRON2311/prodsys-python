@@ -76,27 +76,34 @@ class App(tk.Tk):
         self.load_rules()
         self.set_atoms()
         self.create_widgets()
-        self.factbox.insert(tk.END, *self.facts)
+        self.targets.insert(tk.END, *self.facts)
+        self.inventory.insert(tk.END, *self.facts)
         self.reset()
         self.bind('<Escape>', self.reset)
 
     def create_widgets(self):
         self.frame1 = tk.Frame(self)
         self.frame2 = tk.Frame(self)
-        self.factbox = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE)
-        self.scroll1 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.factbox.yview)
+        self.inventory = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE)
+        self.targets = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE)
+        self.scroll1 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.targets.yview)
         self.status = tk.Text(self.frame1, width=40, height=20, state=tk.DISABLED)
+        self.label1 = tk.Label(self.frame1, text='Инвентарь\n->')
+        self.label2 = tk.Label(self.frame1, text='Сделать\n->')
         self.directb = tk.Button(self.frame2, text='Прямой Вывод', command=self.direct)
         self.reverseb = tk.Button(self.frame2, text='Обратный Вывод', command=self.reverse)
 
         self.frame1.pack(side='top', padx=10, pady=10, fill='both', expand=True)
         self.frame2.pack(side='bottom', padx=10, pady=10)
-        self.factbox.pack(side='left', fill='both')
+        self.label1.pack(side='left')
+        self.inventory.pack(side='left', fill='both')
+        self.label2.pack(side='left')
+        self.targets.pack(side='left', fill='both')
         self.scroll1.pack(side='left', fill='y')
         self.status.pack(side='left', fill='both', expand=True)
         self.directb.pack(side='left', padx=1)
         self.reverseb.pack(side='left', padx=1)
-        self.factbox.config(yscrollcommand=self.scroll1.set)
+        self.targets.config(yscrollcommand=self.scroll1.set)
 
     def load_facts(self, path: str = 'facts.txt'):
         with open(path, encoding='utf8') as f:
@@ -133,10 +140,11 @@ class App(tk.Tk):
         self.status.delete(1.0, tk.END)
         self.status.insert(tk.END, 'Выберите факты и нажмите кнопку')
         self._close_status()
-        self.factbox.selection_clear(0, tk.END)
+        self.targets.selection_clear(0, tk.END)
+        self.inventory.selection_clear(0, tk.END)
 
     def direct(self):
-        facts = {self.facts[i].iid for i in self.factbox.curselection()}
+        facts = {self.facts[i].iid for i in self.targets.curselection()}
         prev_step = facts.copy()
         cur_step = facts.copy()
         self._clear_status()
@@ -153,7 +161,7 @@ class App(tk.Tk):
         self._close_status()
 
     def reverse(self):
-        facts = {self.facts[i] for i in self.factbox.curselection()}
+        facts = {self.facts[i] for i in self.targets.curselection()}
         all_facts = {fact.iid: fact for fact in self.facts}
         s: list[Fact] = []
         for fact in facts:

@@ -6,7 +6,7 @@ r5; f6; f7; 1; Stone -> Furnace
 r6; f3; f8; 1; Stick -> Ladder
 r7; f2, f3; f9; 1; Planks, Stick -> Fence
 r8; f2; f10; 1; Planks -> Boat
-r9; f2; 11; 1; Planks -> Wooden Slabs
+r9; f2; f11; 1; Planks -> Wooden Slabs
 r10; f6; f12; 1; Stone -> Stone Slabs
 r11; f2, f3; f13; 1; Planks, Stick -> Sign
 r12; f2; f14; 1; Planks -> Wooden Door
