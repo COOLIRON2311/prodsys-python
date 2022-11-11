@@ -144,7 +144,7 @@ r126; f107, f132; f147; 1; Glowstone Dust, Potion of Swiftness -> Potion of Swif
 r127; f20, f132; f148; 1; Redstone, Potion of Swiftness -> Potion of Swiftness +
 r128; f20, f133; f149; 1; Redstone, Potion of Slowness -> Potion of Slowness +
 r129; f123, f148; f149; 1; Fermented Spider Eye, Potion of Swiftness + -> Potion of Slowness +
-r130; f107, f133; f150; 1; Glowstone Dust, Potion of Slowness -> Potion of Slowness IV
+r130; f107, f133; f150; 1; Glowstone Dust, Potion of Slowness -> Potion of Slowness II
 r131; f20, f134; f151; 1; Redstone, Potion of Leaping -> Potion of Leaping +
 r132; f107, f134; f152; 1; Redstone, Potion of Leaping -> Potion of Leaping II
 r133; f123, f151; f149; 1; Fermented Spider Eye, Potion of Leaping + -> Potion of Slowness +

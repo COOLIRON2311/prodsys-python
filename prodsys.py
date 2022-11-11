@@ -26,6 +26,11 @@ class Fact:
     def __hash__(self) -> int:
         return hash(self.desc)
 
+    def __eq__(self, o: object) -> bool:
+        if isinstance(o, Fact):
+            return self.desc == o.desc
+        return False
+
 
 class Rule:
     iid: str
@@ -64,6 +69,8 @@ class Rule:
 class App(tk.Tk):
     facts: list[Fact]
     rules: list[Rule]
+    _inv: list[Fact]
+    _tar: list[Fact]
 
     def __init__(self):
         super().__init__()
@@ -72,21 +79,25 @@ class App(tk.Tk):
         self.geometry('1000x400')
         self.facts = []
         self.rules = []
+        self._inv = []
+        self._tar = []
         self.load_facts()
         self.load_rules()
         self.set_atoms()
+        self.fill_inv_tar()
         self.create_widgets()
-        self.targets.insert(tk.END, *self.facts)
-        self.inventory.insert(tk.END, *self.facts)
+        self.inventory.insert(tk.END, *self._inv)
+        self.targets.insert(tk.END, *self._tar)
         self.reset()
         self.bind('<Escape>', self.reset)
+        self.bind('<Control-a>', self.select_all)
         self.state('zoomed')
 
     def create_widgets(self):
         self.frame1 = tk.Frame(self)
         self.frame2 = tk.Frame(self)
         self.inventory = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE, exportselection=False)
-        self.targets = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE, exportselection=False)
+        self.targets = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.SINGLE, exportselection=False)
         self.scroll1 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.inventory.yview)
         self.scroll2 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.targets.yview)
         self.status = tk.Text(self.frame1, width=40, height=20, state=tk.DISABLED)
@@ -128,6 +139,13 @@ class App(tk.Tk):
                 fact.is_atom = True
                 # print(fact)
 
+    def fill_inv_tar(self):
+        for fact in self.facts:
+            if fact.is_atom:
+                self._inv.append(fact)
+            else:
+                self._tar.append(fact)
+
     def _open_status(self):
         self.status.configure(state=tk.NORMAL)
 
@@ -148,8 +166,8 @@ class App(tk.Tk):
         self.inventory.selection_clear(0, tk.END)
 
     def direct(self):
-        facts = {self.facts[i].iid for i in self.inventory.curselection()}
-        target = self.facts[self.targets.curselection()[0]].iid
+        facts = {self._inv[i].iid for i in self.inventory.curselection()}
+        target = self._tar[self.targets.curselection()[0]].iid
         prev_step = facts.copy()
         cur_step = facts.copy()
         self._clear_status()
@@ -161,37 +179,66 @@ class App(tk.Tk):
                     cur_step.update(rule.rhs)
                     self.status.insert(tk.END, f'{rule}\n')
                     if target in cur_step:
-                        self.status.insert(tk.END, 'Цель достигнута')
+                        self.status.insert(tk.END, self.pad_str('Item crafted'))
                         self._close_status()
                         return
             if cur_step == prev_step:
                 break
             prev_step = cur_step.copy()
         if target not in cur_step:
-            self.status.insert(tk.END, 'Цель не достигнута')
+            self._clear_status()
+            self.status.insert(tk.END, self.pad_str('Item can\'t be crafted'))
         self._close_status()
 
     def reverse(self):
-        facts = {self.facts[i] for i in self.targets.curselection()}
+        facts = {self._inv[i] for i in self.inventory.curselection()}
+        target = self._tar[self.targets.curselection()[0]]
         all_facts = {fact.iid: fact for fact in self.facts}
         s: list[Fact] = []
-        for fact in facts:
-            s.append(fact)
+        s.append(target)
 
         self._clear_status()
         self._open_status()
 
+        path: set[Fact] = set()
+        trace: list[str] = []
         while s:
             fact = s.pop()
-            if fact.is_atom:
-                self.status.insert(tk.END, f'{fact}\n')
+            if fact in path:  # защита от зацикливания
+                continue  # уже были в этой ветке
+
+            if fact in facts:  # если факт в инвентаре
+                # if fact in facts:
+                #     path_trace.append(f'{fact} is in inventory')
+                path.clear()  # очищаем путь
+                continue  # идем дальше
+
+            elif fact.is_atom and fact not in facts:  # если факт атом и не был в инвентаре
+                self._clear_status()
+                self._open_status()
+                self.status.insert(tk.END, self.pad_str('Item can\'t be crafted'))
+                self._close_status()
+                return
+
             else:
-                for rule in self.rules:
+                for rule in self.rules:  # ищем правило, в котором факт в rhs
                     if fact.iid in rule.rhs:
-                        self.status.insert(tk.END, f'{rule.reverse_desc}\n')
-                        # print(rule.reverse_desc)
-                        for lhs in rule.lhs:
+                        if fact not in path:  # если факт не был в этой ветке
+                            trace.append(rule)  # добавляем правило в трассировку
+                        path.add(fact)  # добавляем факт в путь
+                        for lhs in rule.lhs:  # добавляем факты из lhs в стек
                             s.append(all_facts[lhs])
+
+        self.status.insert(tk.END, '\n'.join(map(str, reversed(trace))))  # выводим трассировку
+        self.status.insert(tk.END, '\n' + self.pad_str('Item crafted'))  # выводим сообщение
+        self._close_status()
+
+    def pad_str(self, s: str) -> str:
+        ln = len(s)
+        return f"{'-' * ln}\n{s}\n{'-' * ln}"
+
+    def select_all(self, _):
+        self.inventory.select_set(0, tk.END)
 
     def run(self):
         self.mainloop()
