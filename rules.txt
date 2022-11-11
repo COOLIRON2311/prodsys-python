@@ -153,8 +153,8 @@ r135; f107, f135; f154; 1; Glowstone Dust, Potion of Strength -> Potion of Stren
 r136; f107, f136; f155; 1; Glowstone Dust, Potion of Healing -> Potion of Healing II
 r137; f107, f137; f156; 1; Glowstone Dust, Potion of Harming -> Potion of Harming II
 r138; f123, f155; f156; 1; Fermented Spider Eye, Potion of Healing II -> Potion of Harming II
-r139; f107, f138; f157; 1; Glowstone Dust, Potion of Poison -> Potion if Poison II
-r140; f20, f138; f158; 1; Redstone, Potion of Poison -> Potion if Poison +
+r139; f107, f138; f157; 1; Glowstone Dust, Potion of Poison -> Potion of Poison II
+r140; f20, f138; f158; 1; Redstone, Potion of Poison -> Potion of Poison +
 r141; f123, f157; f156; 1; Fermented Spider Eye, Potion of Poison II -> Potion of Harming II
 r142; f20, f139; f159; 1; Redstone, Potion of Regeneration -> Potion of Regeneration +
 r143; f107, f139; f160; 1; Glowstone Dust, Potion of Regeneration -> Potion of Regeneration II
