@@ -68,8 +68,8 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title('Production System')
-        self.minsize(600, 400)
-        self.geometry('600x400')
+        self.minsize(1000, 400)
+        self.geometry('1000x400')
         self.facts = []
         self.rules = []
         self.load_facts()
@@ -80,13 +80,15 @@ class App(tk.Tk):
         self.inventory.insert(tk.END, *self.facts)
         self.reset()
         self.bind('<Escape>', self.reset)
+        self.state('zoomed')
 
     def create_widgets(self):
         self.frame1 = tk.Frame(self)
         self.frame2 = tk.Frame(self)
-        self.inventory = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE)
-        self.targets = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE)
-        self.scroll1 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.targets.yview)
+        self.inventory = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE, exportselection=False)
+        self.targets = tk.Listbox(self.frame1, width=40, height=20, selectmode=tk.MULTIPLE, exportselection=False)
+        self.scroll1 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.inventory.yview)
+        self.scroll2 = tk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.targets.yview)
         self.status = tk.Text(self.frame1, width=40, height=20, state=tk.DISABLED)
         self.label1 = tk.Label(self.frame1, text='Инвентарь\n->')
         self.label2 = tk.Label(self.frame1, text='Сделать\n->')
@@ -97,13 +99,15 @@ class App(tk.Tk):
         self.frame2.pack(side='bottom', padx=10, pady=10)
         self.label1.pack(side='left')
         self.inventory.pack(side='left', fill='both')
+        self.scroll1.pack(side='left', fill='y')
         self.label2.pack(side='left')
         self.targets.pack(side='left', fill='both')
-        self.scroll1.pack(side='left', fill='y')
+        self.scroll2.pack(side='left', fill='y')
         self.status.pack(side='left', fill='both', expand=True)
         self.directb.pack(side='left', padx=1)
         self.reverseb.pack(side='left', padx=1)
-        self.targets.config(yscrollcommand=self.scroll1.set)
+        self.inventory.config(yscrollcommand=self.scroll1.set)
+        self.targets.config(yscrollcommand=self.scroll2.set)
 
     def load_facts(self, path: str = 'facts.txt'):
         with open(path, encoding='utf8') as f:
@@ -144,7 +148,8 @@ class App(tk.Tk):
         self.inventory.selection_clear(0, tk.END)
 
     def direct(self):
-        facts = {self.facts[i].iid for i in self.targets.curselection()}
+        facts = {self.facts[i].iid for i in self.inventory.curselection()}
+        target = self.facts[self.targets.curselection()[0]].iid
         prev_step = facts.copy()
         cur_step = facts.copy()
         self._clear_status()
@@ -155,9 +160,15 @@ class App(tk.Tk):
                 if rule.lhs.issubset(prev_step) and not rule.rhs.issubset(cur_step):
                     cur_step.update(rule.rhs)
                     self.status.insert(tk.END, f'{rule}\n')
+                    if target in cur_step:
+                        self.status.insert(tk.END, 'Цель достигнута')
+                        self._close_status()
+                        return
             if cur_step == prev_step:
                 break
             prev_step = cur_step.copy()
+        if target not in cur_step:
+            self.status.insert(tk.END, 'Цель не достигнута')
         self._close_status()
 
     def reverse(self):
