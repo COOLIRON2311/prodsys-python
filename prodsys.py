@@ -74,6 +74,7 @@ class Type(Enum):
 class Node:
     type: Type
     fact: Fact
+    rule: Rule
     parent: 'Node'
     children: list['Node']
     path: list['Node']
@@ -83,6 +84,7 @@ class Node:
     def __init__(self, fact, parent=None):
         self.type = Type.And
         self.fact = fact
+        self.rule = None
         self.parent = parent
         self.children = []
         self.path = []
@@ -90,7 +92,7 @@ class Node:
         self.satisfied = False
 
     def print(self, indent=0):
-        print(' ' * indent + '|_', self.type, self.fact, self.satisfied)
+        print(' ' * indent + '|_', self.type, self.fact, self.satisfied, self.rule)
         for child in self.children:
             child.print(indent + 4)
 
@@ -237,6 +239,9 @@ class App(tk.Tk):
         while not q1.empty():
             node = q1.get()
 
+            if node.leads_to_loop:
+                continue
+
             if node.fact in facts or node.fact.is_atom:
                 continue
 
@@ -248,13 +253,16 @@ class App(tk.Tk):
                     new_facts.append(rule.lhs)
                     new_rules.append(rule)
 
-            if len(new_facts) == 1:
+            if len(new_facts) == 1: # And
                 for fact in new_facts[0]:
                     n = Node(all_facts[fact], node)
+                    if new_rules[0] in node.path:
+                        n.leads_to_loop = True
                     n.path = node.path + [new_rules[0]]
+                    n.rule = new_rules[0]
                     node.children.append(n)
                     q1.put(n)
-            else:
+            else: # Or
                 for i in range(len(new_facts)):
                     node.type = Type.Or
                     a = Node(node.fact, node)
@@ -262,7 +270,10 @@ class App(tk.Tk):
                     node.children.append(a)
                     for fact in new_facts[i]:
                         n = Node(all_facts[fact], a)
+                        if new_rules[i] in a.path:
+                            n.leads_to_loop = True
                         n.path = a.path + [new_rules[i]]
+                        n.rule = new_rules[i]
                         a.children.append(n)
                         q1.put(n)
 
@@ -275,27 +286,29 @@ class App(tk.Tk):
             else:
                 match root.type:
                     case Type.And:
-                        _all = True
-                        for child in root.children:
-                            _all &= _eval(child)
-                        root.satisfied = _all
-                        return _all
-                        # if all(_eval(child) for child in root.children):
-                        #     root.satisfied = True
-                        #     return True
+                        if all(_eval(child) for child in root.children):
+                            root.satisfied = True
+                            return True
+                        return False
+
                     case Type.Or:
-                        _any = False
-                        for child in root.children:
-                            _any |= _eval(child)
-                        root.satisfied = _any
-                        return _any
-                        # if any(_eval(child) for child in root.children):
-                        #     root.satisfied = True
-                        #     return True
+                        if any(_eval(child) for child in root.children):
+                            root.satisfied = True
+                            return True
+                        return False
+
                     case _:
                         raise ValueError('Unknown node type')
         _eval(root)
-        # root.print()
+        root.print()
+        self._clear_status()
+        self._open_status()
+        if root.satisfied:
+            # TODO: print path
+            self.status.insert(tk.END, self.pad_str('Item crafted'))
+        else:
+            self.status.insert(tk.END, self.pad_str('Item can\'t be crafted'))
+        self._close_status()
 
     def pad_str(self, s: str) -> str:
         ln = len(s)
