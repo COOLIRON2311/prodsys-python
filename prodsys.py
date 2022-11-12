@@ -1,5 +1,6 @@
 import tkinter as tk
-
+from enum import Enum
+from queue import Queue
 
 class Fact:
     iid: str
@@ -64,6 +65,38 @@ class Rule:
     @property
     def reverse_desc(self):
         return ' -> '.join(self.desc.split(' -> ')[::-1])
+
+
+class Type(Enum):
+    And = 0
+    Or = 1
+
+class Node:
+    type: Type
+    fact: Fact
+    parent: 'Node'
+    children: list['Node']
+    path: list['Node']
+    leads_to_loop: bool
+    satisfied: bool
+
+    def __init__(self, fact, parent=None):
+        self.type = Type.And
+        self.fact = fact
+        self.parent = parent
+        self.children = []
+        self.path = []
+        self.leads_to_loop = False
+        self.satisfied = False
+
+    def print(self, indent=0):
+        print(' ' * indent + '|_', self.type, self.fact, self.satisfied)
+        for child in self.children:
+            child.print(indent + 4)
+
+    @property
+    def is_leaf(self):
+        return len(self.children) == 0
 
 
 class App(tk.Tk):
@@ -191,47 +224,78 @@ class App(tk.Tk):
         self._close_status()
 
     def reverse(self):
+        # pylint: disable=consider-using-enumerate
         facts = {self._inv[i] for i in self.inventory.curselection()}
+        # print(facts)
         target = self._tar[self.targets.curselection()[0]]
         all_facts = {fact.iid: fact for fact in self.facts}
-        s: list[Fact] = []
-        s.append(target)
 
-        self._clear_status()
-        self._open_status()
+        root = Node(target)
+        q1: Queue[Node] = Queue()
+        q1.put(root)
 
-        path: set[Fact] = set()
-        trace: list[str] = []
-        while s:
-            fact = s.pop()
-            if fact in path:  # защита от зацикливания
-                continue  # уже были в этой ветке
+        while not q1.empty():
+            node = q1.get()
 
-            if fact in facts:  # если факт в инвентаре
-                # if fact in facts:
-                #     path_trace.append(f'{fact} is in inventory')
-                path.clear()  # очищаем путь
-                continue  # идем дальше
+            if node.fact in facts or node.fact.is_atom:
+                continue
 
-            elif fact.is_atom and fact not in facts:  # если факт атом и не был в инвентаре
-                self._clear_status()
-                self._open_status()
-                self.status.insert(tk.END, self.pad_str('Item can\'t be crafted'))
-                self._close_status()
-                return
+            new_facts = []
+            new_rules = []
 
+            for rule in self.rules:
+                if node.fact.iid in rule.rhs:
+                    new_facts.append(rule.lhs)
+                    new_rules.append(rule)
+
+            if len(new_facts) == 1:
+                for fact in new_facts[0]:
+                    n = Node(all_facts[fact], node)
+                    n.path = node.path + [new_rules[0]]
+                    node.children.append(n)
+                    q1.put(n)
             else:
-                for rule in self.rules:  # ищем правило, в котором факт в rhs
-                    if fact.iid in rule.rhs:
-                        if fact not in path:  # если факт не был в этой ветке
-                            trace.append(rule)  # добавляем правило в трассировку
-                        path.add(fact)  # добавляем факт в путь
-                        for lhs in rule.lhs:  # добавляем факты из lhs в стек
-                            s.append(all_facts[lhs])
+                for i in range(len(new_facts)):
+                    node.type = Type.Or
+                    a = Node(node.fact, node)
+                    a.path = node.path
+                    node.children.append(a)
+                    for fact in new_facts[i]:
+                        n = Node(all_facts[fact], a)
+                        n.path = a.path + [new_rules[i]]
+                        a.children.append(n)
+                        q1.put(n)
 
-        self.status.insert(tk.END, '\n'.join(map(str, reversed(trace))))  # выводим трассировку
-        self.status.insert(tk.END, '\n' + self.pad_str('Item crafted'))  # выводим сообщение
-        self._close_status()
+        def _eval(root: Node):
+            if root.is_leaf:
+                if root.fact in facts:
+                    root.satisfied = True
+                    return True
+                return False
+            else:
+                match root.type:
+                    case Type.And:
+                        _all = True
+                        for child in root.children:
+                            _all &= _eval(child)
+                        root.satisfied = _all
+                        return _all
+                        # if all(_eval(child) for child in root.children):
+                        #     root.satisfied = True
+                        #     return True
+                    case Type.Or:
+                        _any = False
+                        for child in root.children:
+                            _any |= _eval(child)
+                        root.satisfied = _any
+                        return _any
+                        # if any(_eval(child) for child in root.children):
+                        #     root.satisfied = True
+                        #     return True
+                    case _:
+                        raise ValueError('Unknown node type')
+        _eval(root)
+        # root.print()
 
     def pad_str(self, s: str) -> str:
         ln = len(s)
