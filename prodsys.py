@@ -94,7 +94,7 @@ class Node:
         self.satisfied = False
 
     def print(self, indent=0):
-        print(' ' * indent + '|_', self.type, self.fact, self.satisfied, self.rule)
+        print(' ' * indent + '|_', self.type, self.fact, self.satisfied)
         for child in self.children:
             child.print(indent + 4)
 
@@ -279,10 +279,13 @@ class App(tk.Tk):
                         a.children.append(n)
                         q1.put(n)
 
+        trace = []
         def _eval(root: Node):
             if root.is_leaf:
                 if root.fact in facts:
                     root.satisfied = True
+                    if root.rule and root.rule not in trace:
+                        trace.append(root.rule)
                     return True
                 return False
             else:
@@ -290,12 +293,16 @@ class App(tk.Tk):
                     case Type.And:
                         if all(_eval(child) for child in root.children):
                             root.satisfied = True
+                            if root.rule and root.rule not in trace:
+                                trace.append(root.rule)
                             return True
                         return False
 
                     case Type.Or:
                         if any(_eval(child) for child in root.children):
                             root.satisfied = True
+                            if root.rule and root.rule not in trace:
+                                trace.append(root.rule)
                             return True
                         return False
 
@@ -306,20 +313,6 @@ class App(tk.Tk):
         self._clear_status()
         self._open_status()
         if root.satisfied:
-            trace = []
-
-            def _trace(root: Node):
-                if root.is_leaf:
-                    if root.rule not in trace:
-                        trace.append(root.rule)
-                    return
-                for child in root.children:
-                    if child.satisfied:
-                        _trace(child)
-                        if root.rule and root.rule not in trace:
-                            trace.append(root.rule)
-
-            _trace(root)
             for rule in trace:
                 self.status.insert(tk.END, f'{rule}\n')
             self.status.insert(tk.END, self.pad_str('Item crafted'))
