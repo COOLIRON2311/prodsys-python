@@ -309,6 +309,7 @@ class App(tk.Tk):
                     case _:
                         raise ValueError('Unknown node type')
         _eval(root)
+        trace.sort(key= lambda x: int(x.iid[1:]))
         root.print()
         self._clear_status()
         self._open_status()
