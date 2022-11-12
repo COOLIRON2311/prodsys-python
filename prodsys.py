@@ -2,6 +2,7 @@ import tkinter as tk
 from enum import Enum
 from queue import Queue
 
+
 class Fact:
     iid: str
     desc: str
@@ -70,6 +71,7 @@ class Rule:
 class Type(Enum):
     And = 0
     Or = 1
+
 
 class Node:
     type: Type
@@ -253,7 +255,7 @@ class App(tk.Tk):
                     new_facts.append(rule.lhs)
                     new_rules.append(rule)
 
-            if len(new_facts) == 1: # And
+            if len(new_facts) == 1:  # And
                 for fact in new_facts[0]:
                     n = Node(all_facts[fact], node)
                     if new_rules[0] in node.path:
@@ -262,7 +264,7 @@ class App(tk.Tk):
                     n.rule = new_rules[0]
                     node.children.append(n)
                     q1.put(n)
-            else: # Or
+            else:  # Or
                 for i in range(len(new_facts)):
                     node.type = Type.Or
                     a = Node(node.fact, node)
@@ -304,7 +306,22 @@ class App(tk.Tk):
         self._clear_status()
         self._open_status()
         if root.satisfied:
-            # TODO: print path
+            trace = []
+
+            def _trace(root: Node):
+                if root.is_leaf:
+                    if root.rule not in trace:
+                        trace.append(root.rule)
+                    return
+                for child in root.children:
+                    if child.satisfied:
+                        _trace(child)
+                        if root.rule and root.rule not in trace:
+                            trace.append(root.rule)
+
+            _trace(root)
+            for rule in trace:
+                self.status.insert(tk.END, f'{rule}\n')
             self.status.insert(tk.END, self.pad_str('Item crafted'))
         else:
             self.status.insert(tk.END, self.pad_str('Item can\'t be crafted'))
