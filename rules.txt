@@ -67,7 +67,7 @@ r59; f2, f60; f70; 1; Planks, Iron Ingot -> Smithing Table
 r60; f11, f63; f71; 1; Wooden Slabs, Bookshelf -> Lectern
 r61; f2, f101; f72; 1; Planks, String -> Loom
 r62; f3, f48; f73; 1; Stick, Leather -> Item Frame
-r63; f5, f10; f74; 1; Chest, Boat -> Boat with Chest
+r63; f48, f58; f74; 1; Leather, Paper -> Book
 
 r64; f48; f75; 1; Leather -> Leather Helmet
 r65; f48; f76; 1; Leather -> Leather Chestplate
@@ -99,5 +99,5 @@ r85; f21, f96; f97; 1; Golden Ingot, Apple -> Golden Apple
 r86; f2, f22; f98; 1; Planks, Diamond -> Jukebox
 r87; f2, f6, f15, f20; f99; 1; Planks, Stone, Iron Ingot, Redstone -> Piston
 r88; f15; f100; 1; Iron Ingot -> Minecart
-r89; f48, f58; f102; 1; Leather, Paper -> Book
+r89; f5, f10; f102; 1; Chest, Boat -> Boat with Chest
 r90; f2; f11; 1; Planks -> Wooden Slabs

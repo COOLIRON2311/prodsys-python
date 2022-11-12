@@ -79,7 +79,7 @@ f70;Smithing Table;
 f71;Lectern;
 f72;Loom;
 f73;Item Frame;
-f74;Boat with Chest;
+f74;Book;
 
 f75;Leather Helmet;
 f76;Leather Chestplate;
@@ -113,4 +113,5 @@ f98;Jukebox;
 f99;Piston;
 f100;Minecart;
 f101;String;
-f102;Book;
+
+f102;Boat with Chest;
