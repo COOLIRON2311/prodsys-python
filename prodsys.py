@@ -279,13 +279,10 @@ class App(tk.Tk):
                         a.children.append(n)
                         q1.put(n)
 
-        trace = []
         def _eval(root: Node):
             if root.is_leaf:
                 if root.fact in facts:
                     root.satisfied = True
-                    if root.rule and root.rule not in trace:
-                        trace.append(root.rule)
                     return True
                 return False
             else:
@@ -293,24 +290,37 @@ class App(tk.Tk):
                     case Type.And:
                         if all(_eval(child) for child in root.children):
                             root.satisfied = True
-                            if root.rule and root.rule not in trace:
-                                trace.append(root.rule)
                             return True
                         return False
 
                     case Type.Or:
                         if any(_eval(child) for child in root.children):
                             root.satisfied = True
-                            if root.rule and root.rule not in trace:
-                                trace.append(root.rule)
                             return True
                         return False
 
                     case _:
                         raise ValueError('Unknown node type')
+
+        def _trace(root: Node, trace: list):
+            if root.is_leaf:
+                if root.satisfied:
+                    if root.rule and root.rule not in trace:
+                        trace.append(root.rule)
+                return trace
+            for child in root.children:
+                if child.satisfied:
+                    if root.rule and root.rule not in trace:
+                        trace.append(root.rule)
+                    _trace(child, trace)
+            return trace
+
         _eval(root)
-        trace.sort(key= lambda x: int(x.iid[1:]))
+        trace = _trace(root, [])
+        trace.sort(key=lambda x: int(x.iid[1:]))
+        print('-' * 60)
         root.print()
+        print('-' * 60)
         self._clear_status()
         self._open_status()
         if root.satisfied:

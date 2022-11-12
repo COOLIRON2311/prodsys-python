@@ -17,154 +17,153 @@ r15; f2, f17; f19; 1; Planks, Wool -> Bed
 r16; f2, f3; f24; 1; Planks, Stick -> Wooden Pickaxe
 r17; f2, f6; f25; 1; Planks, Stone -> Stone Pickaxe
 r18; f2, f15; f26; 1; Planks, Iron Ingot -> Iron Pickaxe
-r19; f2, f21; f103; 1; Planks, GoldIngot -> Golden Pickaxe
-r20; f2, f22; f27; 1; Planks, Diamond -> Diamond Pickaxe
+r19; f2, f21; f27; 1; Planks, Gold Ingot -> Golden Pickaxe
+r20; f2, f22; f28; 1; Planks, Diamond -> Diamond Pickaxe
 
-r21; f2, f3; f28; 1; Planks, Stick -> Wooden Shovel
-r22; f3, f6; f29; 1; Stick, Stone -> Stone Shovel
-r23; f3, f15; f30; 1; Stick, Iron Ingot -> Iron Shovel
-r24; f3, f21; f31; 1; Stick, Gold Ingot -> Golden Shovel
-r25; f3, f22; f32; 1; Stick, Diamond -> Diamond Shovel
+r21; f2, f3; f29; 1; Planks, Stick -> Wooden Shovel
+r22; f3, f6; f30; 1; Stick, Stone -> Stone Shovel
+r23; f3, f15; f31; 1; Stick, Iron Ingot -> Iron Shovel
+r24; f3, f21; f32; 1; Stick, Gold Ingot -> Golden Shovel
+r25; f3, f22; f33; 1; Stick, Diamond -> Diamond Shovel
 
-r26; f2, f3; f33; 1; Planks, Stick -> Wooden Axe
-r27; f3, f6; f34; 1; Stick, Stone -> Stone Axe
-r28; f3, f15; f35; 1; Stick, Iron Ingot -> Iron Axe
-r29; f3, f21; f36; 1; Stick, Gold Ingot -> Golden Axe
-r30; f3, f22; f37; 1; Stick, Diamond -> Diamond Axe
+r26; f2, f3; f34; 1; Planks, Stick -> Wooden Axe
+r27; f3, f6; f35; 1; Stick, Stone -> Stone Axe
+r28; f3, f15; f36; 1; Stick, Iron Ingot -> Iron Axe
+r29; f3, f21; f37; 1; Stick, Gold Ingot -> Golden Axe
+r30; f3, f22; f38; 1; Stick, Diamond -> Diamond Axe
 
-r31; f2, f3; f38; 1; Planks, Stick -> Wooden Hoe
-r32; f3, f6; f39; 1; Stick, Stone -> Stone Hoe
-r33; f3, f15; f40; 1; Stick, Iron Ingot -> Iron Hoe
-r34; f3, f21; f41; 1; Stick, Gold Ingot -> Golden Hoe
-r35; f3, f22; f42; 1; Stick, Diamond -> Diamond Hoe
+r31; f2, f3; f39; 1; Planks, Stick -> Wooden Hoe
+r32; f3, f6; f40; 1; Stick, Stone -> Stone Hoe
+r33; f3, f15; f41; 1; Stick, Iron Ingot -> Iron Hoe
+r34; f3, f21; f42; 1; Stick, Gold Ingot -> Golden Hoe
+r35; f3, f22; f43; 1; Stick, Diamond -> Diamond Hoe
 
-r36; f2, f3; f43; 1; Planks, Stick -> Wooden Sword
-r37; f3, f6; f44; 1; Stick, Stone -> Stone Sword
-r38; f3, f15; f45; 1; Stick, Iron Ingot -> Iron Sword
-r39; f3, f21; f46; 1; Stick, Gold Ingot -> Golden Sword
-r40; f3, f22; f47; 1; Stick, Diamond -> Diamond Sword
+r36; f2, f3; f44; 1; Planks, Stick -> Wooden Sword
+r37; f3, f6; f45; 1; Stick, Stone -> Stone Sword
+r38; f3, f15; f46; 1; Stick, Iron Ingot -> Iron Sword
+r39; f3, f21; f47; 1; Stick, Gold Ingot -> Golden Sword
+r40; f3, f22; f48; 1; Stick, Diamond -> Diamond Sword
 
-r41; f3, f101; f49; 1; Stick, String -> Fishing Rod
-r42; f15, f50; f51; 1; Iron Ingot, Flint -> Flint and Steel
-r43; f15; f52; 1; Iron Ingot -> Shears
-r44; f15; f53; 1; Iron Ingot -> Bucket
-r45; f3, f15; f54; 1; Stick, Iron Ingot -> Track
-r46; f20, f21; f55; 1; Redstone, Gold Ingot -> Clock
-r47; f15, f20; f56; 1; Iron Ingot, Redstone -> Compass
+r41; f3, f103; f50; 1; Stick, String -> Fishing Rod
+r42; f15, f51; f52; 1; Iron Ingot, Flint -> Flint and Steel
+r43; f15; f53; 1; Iron Ingot -> Shears
+r44; f15; f54; 1; Iron Ingot -> Bucket
+r45; f3, f15; f55; 1; Stick, Iron Ingot -> Track
+r46; f20, f21; f56; 1; Redstone, Gold Ingot -> Clock
+r47; f15, f20; f57; 1; Iron Ingot, Redstone -> Compass
 
-r48; f57; f58; 1; Sugar Cane -> Paper
-r49; f56, f58; f59; 1; Compass, Paper -> Map
-r50; f15; f60; 1; Iron Ingot -> Iron Bars
-r51; f22, f61, f102; f62; 1; Diamond, Obsidian, Book -> Enchantment Table
-r52; f2, f102; f63; 1; Planks, Book -> Bookshelf
-r53; f1, f2, f23; f64; 1; Wood, Stick, Coal -> Campfire
-r54; f2, f11; f65; 1; Planks, Wooden Slabs -> Barrel
-r55; f1, f7; f66; 1; Wood, Furnace -> Smoker
-r56; f2, f58; f67; 1; Planks, Paper -> Cartography Table
-r57; f2, f50; f68; 1; Planks, Flint -> Fletching Table
-r58; f11; f69; 1; Wooden Slabs -> Composter
-r59; f2, f60; f70; 1; Planks, Iron Ingot -> Smithing Table
-r60; f11, f63; f71; 1; Wooden Slabs, Bookshelf -> Lectern
-r61; f2, f101; f72; 1; Planks, String -> Loom
-r62; f3, f48; f73; 1; Stick, Leather -> Item Frame
-r63; f5, f10; f74; 1; Chest, Boat -> Boat with Chest
+r48; f58; f59; 1; Sugar Cane -> Paper
+r49; f49, f59; f75; 1; Leather, Paper -> Book
+r50; f15; f61; 1; Iron Ingot -> Iron Bars
+r51; f22, f62, f75; f63; 1; Diamond, Obsidian, Book -> Enchantment Table
+r52; f2, f75; f64; 1; Planks, Book -> Bookshelf
+r53; f1, f3, f23; f65; 1; Wood, Stick, Coal -> Campfire
+r54; f2, f11; f66; 1; Planks, Wooden Slabs -> Barrel
+r55; f1, f7; f67; 1; Wood, Furnace -> Smoker
+r56; f2, f59; f68; 1; Planks, Paper -> Cartography Table
+r57; f2, f51; f69; 1; Planks, Flint -> Fletching Table
+r58; f11; f70; 1; Wooden Slabs -> Composter
+r59; f2, f15; f71; 1; Planks, Iron Ingot -> Smithing Table
+r60; f11, f64; f72; 1; Wooden Slabs, Bookshelf -> Lectern
+r61; f2, f103; f73; 1; Planks, String -> Loom
+r62; f3, f49; f74; 1; Stick, Leather -> Item Frame
+r63; f57, f59; f60; 1; Compass, Paper -> Map
 
-r64; f48; f75; 1; Leather -> Leather Helmet
-r65; f48; f76; 1; Leather -> Leather Chestplate
-r66; f48; f77; 1; Leather -> Leather Leggings
-r67; f48; f78; 1; Leather -> Leather Boots
+r64; f49; f76; 1; Leather -> Leather Helmet
+r65; f49; f77; 1; Leather -> Leather Chestplate
+r66; f49; f78; 1; Leather -> Leather Leggings
+r67; f49; f79; 1; Leather -> Leather Boots
 
-r68; f15; f79; 1; Iron Ingot -> Iron Helmet
-r69; f15; f80; 1; Iron Ingot -> Iron Chestplate
-r70; f15; f81; 1; Iron Ingot -> Iron Leggings
-r71; f15; f82; 1; Iron Ingot -> Iron Boots
+r68; f15; f80; 1; Iron Ingot -> Iron Helmet
+r69; f15; f81; 1; Iron Ingot -> Iron Chestplate
+r70; f15; f82; 1; Iron Ingot -> Iron Leggings
+r71; f15; f83; 1; Iron Ingot -> Iron Boots
 
-r72; f21; f83; 1; Gold Ingot -> Golden Helmet
-r73; f21; f84; 1; Gold Ingot -> Golden Chestplate
-r74; f21; f85; 1; Gold Ingot -> Golden Leggings
-r75; f21; f86; 1; Gold Ingot -> Golden Boots
+r72; f21; f84; 1; Gold Ingot -> Golden Helmet
+r73; f21; f85; 1; Gold Ingot -> Golden Chestplate
+r74; f21; f86; 1; Gold Ingot -> Golden Leggings
+r75; f21; f87; 1; Gold Ingot -> Golden Boots
 
-r76; f22; f87; 1; Diamond -> Diamond Helmet
-r77; f22; f88; 1; Diamond -> Diamond Chestplate
-r78; f22; f89; 1; Diamond -> Diamond Leggings
-r79; f22; f90; 1; Diamond -> Diamond Boots
+r76; f22; f88; 1; Diamond -> Diamond Helmet
+r77; f22; f89; 1; Diamond -> Diamond Chestplate
+r78; f22; f90; 1; Diamond -> Diamond Leggings
+r79; f22; f91; 1; Diamond -> Diamond Boots
 
-r80; f2, f15; f91; 1; Planks, Iron Ingot -> Shield
-r81; f3, f101; f92; 1; Stick, String -> Bow
-r82; f3, f50, f58; f93; 1; Stick, Flint, Feather -> Arrow
-r83; f2, f3, f15; f94; 1; Planks, Stick, Iron Ingot -> Tripwire Hook
-r84; f3, f15, f94, f101; f95; 1; Stick, Iron Ingot, Tripwire Hook, String -> Crossbow
+r80; f2, f15; f92; 1; Planks, Iron Ingot -> Shield
+r81; f3, f103; f93; 1; Stick, String -> Bow
+r82; f3, f51, f94; f95; 1; Stick, Flint, Feather -> Arrow
+r83; f2, f3, f15; f96; 1; Planks, Stick, Iron Ingot -> Tripwire Hook
+r84; f3, f15, f96, f103; f97; 1; Stick, Iron Ingot, Tripwire Hook, String -> Crossbow
 
-r85; f21, f96; f97; 1; Golden Ingot, Apple -> Golden Apple
-r86; f2, f22; f98; 1; Planks, Diamond -> Jukebox
-r87; f2, f6, f15, f20; f99; 1; Planks, Stone, Iron Ingot, Redstone -> Piston
-r88; f15; f100; 1; Iron Ingot -> Minecart
-r89; f48, f58; f102; 1; Leather, Paper -> Book
+r85; f21, f98; f99; 1; Gold Ingot, Apple -> Golden Apple
+r86; f2, f22; f100; 1; Planks, Diamond -> Jukebox
+r87; f2, f6, f15, f20; f101; 1; Planks, Stone, Iron Ingot, Redstone -> Piston
+r88; f15; f102; 1; Iron Ingot -> Minecart
+r89; f5, f10; f104; 1; Chest, Boat -> Boat with Chest
 r90; f2; f11; 1; Planks -> Wooden Slabs
 
-r91; f57; f108; 1; Sugar Cane -> Sugar
-r92; f21, f111; f112; 1; Gold Ingot, Melon Slice -> Glistering Melon Slice
-r93; f110, f115; f116; 1; Blaze Powder, Slimeball -> Magma Cream
-r94; f21, f117; f118; 1; Gold Ingot, Carrot -> Golden Carrot
-r95; f122, f108, f113; f123; 1; Brown Mushroom, Sugar, Spider Eye -> Fermented Spider Eye
-r96; f104; f125; 1; Sand -> Glass
+r91; f58; f109; 1; Sugar Cane -> Sugar
+r92; f21, f112; f113; 1; Gold Ingot, Melon Slice -> Glistering Melon Slice
+r93; f111, f116; f117; 1; Blaze Powder, Slimeball -> Magma Cream
+r94; f21, f118; f119; 1; Gold Ingot, Carrot -> Golden Carrot
+r95; f123, f109, f114; f124; 1; Brown Mushroom, Sugar, Spider Eye -> Fermented Spider Eye
+r96; f105; f126; 1; Sand -> Glass
 
-r97; f125; f126; 1; Glass -> Glass Bottle
-r98; f124, f126; f127; 1; Water, Glass Bottle -> Water Bottle
-r99; f105, f127; f128; 1; Nether Wart, Water Bottle -> Awkward Potion
-r100; f106, f127; f129; 1; Gunpowder, Water Bottle -> Splash Potion
-r101; f113, f127; f130; 1; Spider Eye, Water Bottle -> Mundane Potion
-r102; f119, f127; f130; 1; Ghast Tear, Water Bottle -> Mundane Potion
-r103; f109, f127; f130; 1; Rabbits Foot, Water Bottle -> Mundane Potion
-r104; f110, f127; f130; 1; Blaze Powder, Water Bottle -> Mundane Potion
-r105; f112, f127; f130; 1; Glistering Melon Slice, Water Bottle -> Mundane Potion
-r106; f108, f127; f130; 1; Sugar, Water Bottle -> Mundane Potion
-r107; f116, f127; f130; 1; Magma Cream, Water Bottle -> Mundane Potion
-r108; f20, f127; f130; 1; Redstone, Water Bottle -> Mundane Potion
-r109; f107, f127; f130; 1; Glowstone Dust, Water Bottle -> Thick Potion
+r97; f126; f127; 1; Glass -> Glass Bottle
+r98; f125, f127; f128; 1; Water, Glass Bottle -> Water Bottle
+r99; f106, f128; f129; 1; Nether Wart, Water Bottle -> Awkward Potion
+r100; f107, f128; f130; 1; Gunpowder, Water Bottle -> Splash Potion
+r101; f114, f128; f131; 1; Spider Eye, Water Bottle -> Mundane Potion
+r102; f120, f128; f131; 1; Ghast Tear, Water Bottle -> Mundane Potion
+r103; f110, f128; f131; 1; Rabbits Foot, Water Bottle -> Mundane Potion
+r104; f111, f128; f131; 1; Blaze Powder, Water Bottle -> Mundane Potion
+r105; f113, f128; f131; 1; Glistering Melon Slice, Water Bottle -> Mundane Potion
+r106; f109, f128; f131; 1; Sugar, Water Bottle -> Mundane Potion
+r107; f117, f128; f131; 1; Magma Cream, Water Bottle -> Mundane Potion
+r108; f20, f128; f131; 1; Redstone, Water Bottle -> Mundane Potion
+r109; f108, f128; f132; 1; Glowstone Dust, Water Bottle -> Thick Potion
 
-r110; f108, f128; f132; 1; Sugar, Awkward Potion -> Potion of Swiftness
-r111; f123, f132; f133; 1; Fermented Spider Eye, Potion of Swiftness -> Potion of Slowness
-r112; f109, f128; f134; 1; Rabbits Foot, Awkward Potion -> Potion of Leaping
-r113; f110, f128; f135; 1; Blaze Powder, Awkward Potion -> Potion of Strength
-r114; f112, f128; f136; 1; Glistering Melon Slice, Awkward Potion -> Potion of Healing
-r115; f123, f136; f137; 1; Fermented Spider Eye, Potion of Healing -> Potion of Harming
-r116; f113, f128; f138; 1; Spider Eye, Awkward Potion -> Potion of Poison
-r117; f123, f138; f137; 1; Fermented Spider Eye, Potion of Poison -> Potion of Harming
-r118; f119, f128; f139; 1; Ghast Tear, Awkward Potion -> Potion of Regeneration
-r119; f116, f128; f140; 1; Magma Cream, Awkward Potion -> Potion of Fire Resistance
-r120; f114, f128; f141; 1; Pufferfish, Awkward Potion -> Potion of Water Breathing
-r121; f118, f128; f142; 1; Golden Carrot, Awkward Potion -> Potion of Night Vision
-r122; f123, f142; f143; 1; Fermented Spider Eye, Potion of Night Vision -> Potion of Invisibility
-r123; f120, f128; f144; 1; Turtle Shell, Awkward Potion -> Potion of Turtle Master
-r124; f121, f128; f145; 1; Phantom Membrane, Awkward Potion -> Potion of Slow Falling
-r125; f123, f127; f146; 1; Fermented Spider Eye, Water Bottle -> Potion of Weakness
+r110; f109, f129; f133; 1; Sugar, Awkward Potion -> Potion of Swiftness
+r111; f124, f133; f134; 1; Fermented Spider Eye, Potion of Swiftness -> Potion of Slowness
+r112; f110, f129; f135; 1; Rabbits Foot, Awkward Potion -> Potion of Leaping
+r113; f111, f129; f136; 1; Blaze Powder, Awkward Potion -> Potion of Strength
+r114; f113, f129; f137; 1; Glistering Melon Slice, Awkward Potion -> Potion of Healing
+r115; f124, f137; f138; 1; Fermented Spider Eye, Potion of Healing -> Potion of Harming
+r116; f114, f129; f139; 1; Spider Eye, Awkward Potion -> Potion of Poison
+r117; f124, f139; f138; 1; Fermented Spider Eye, Potion of Poison -> Potion of Harming
+r118; f120, f129; f140; 1; Ghast Tear, Awkward Potion -> Potion of Regeneration
+r119; f117, f129; f141; 1; Magma Cream, Awkward Potion -> Potion of Fire Resistance
+r120; f115, f129; f142; 1; Pufferfish, Awkward Potion -> Potion of Water Breathing
+r121; f119, f129; f143; 1; Golden Carrot, Awkward Potion -> Potion of Night Vision
+r122; f124, f143; f144; 1; Fermented Spider Eye, Potion of Night Vision -> Potion of Invisibility
+r123; f121, f129; f145; 1; Turtle Shell, Awkward Potion -> Potion of Turtle Master
+r124; f122, f129; f146; 1; Phantom Membrane, Awkward Potion -> Potion of Slow Falling
+r125; f124, f128; f147; 1; Fermented Spider Eye, Water Bottle -> Potion of Weakness
 
-r126; f107, f132; f147; 1; Glowstone Dust, Potion of Swiftness -> Potion of Swiftness II
-r127; f20, f132; f148; 1; Redstone, Potion of Swiftness -> Potion of Swiftness +
-r128; f20, f133; f149; 1; Redstone, Potion of Slowness -> Potion of Slowness +
-r129; f123, f148; f149; 1; Fermented Spider Eye, Potion of Swiftness + -> Potion of Slowness +
-r130; f107, f133; f150; 1; Glowstone Dust, Potion of Slowness -> Potion of Slowness II
-r131; f20, f134; f151; 1; Redstone, Potion of Leaping -> Potion of Leaping +
-r132; f107, f134; f152; 1; Redstone, Potion of Leaping -> Potion of Leaping II
-r133; f123, f151; f149; 1; Fermented Spider Eye, Potion of Leaping + -> Potion of Slowness +
-r134; f20, f135; f153; 1; Redstone, Potion of Strength -> Potion of Strength +
-r135; f107, f135; f154; 1; Glowstone Dust, Potion of Strength -> Potion of Strength II
-r136; f107, f136; f155; 1; Glowstone Dust, Potion of Healing -> Potion of Healing II
-r137; f107, f137; f156; 1; Glowstone Dust, Potion of Harming -> Potion of Harming II
-r138; f123, f155; f156; 1; Fermented Spider Eye, Potion of Healing II -> Potion of Harming II
-r139; f107, f138; f157; 1; Glowstone Dust, Potion of Poison -> Potion of Poison II
-r140; f20, f138; f158; 1; Redstone, Potion of Poison -> Potion of Poison +
-r141; f123, f157; f156; 1; Fermented Spider Eye, Potion of Poison II -> Potion of Harming II
-r142; f20, f139; f159; 1; Redstone, Potion of Regeneration -> Potion of Regeneration +
-r143; f107, f139; f160; 1; Glowstone Dust, Potion of Regeneration -> Potion of Regeneration II
-r144; f20, f140; f161; 1; Redstone, Potion of Resistance -> Potion of Fire Resistance II
-r145; f20, f141; f162; 1; Redstone, Potion of Water Breathing -> Potion of Water Breathing +
-r146; f20, f142; f163; 1; Redstone, Potion of Night Vision -> Potion of Night Vision +
-r147; f20, f143; f164; 1; Redstone, Potion of Invisibility -> Potion of Invisibility +
-r148; f123, f163; f164; 1; Fermented Spider Eye, Potion of Night Vision + -> Potion of Invisibility +
-r149; f20, f144; f165; 1; Redstone, Potion of Turtle Master -> Potion of Turtle Master +
-r150; f107, f144; f166; 1; Glowstone Dust, Potion of Turtle Master -> Potion of Turtle Master II
-r151; f20, f145; f167; 1; Redstone, Potion of Slow Falling -> Potion of Slow Falling +
-r152; f20, f146; f168; 1; Redstone, Potion of Weakness -> Potion of Weakness +
-
+r126; f108, f133; f148; 1; Glowstone Dust, Potion of Swiftness -> Potion of Swiftness II
+r127; f20, f133; f149; 1; Redstone, Potion of Swiftness -> Potion of Swiftness +
+r128; f20, f134; f150; 1; Redstone, Potion of Slowness -> Potion of Slowness +
+r129; f124, f149; f150; 1; Fermented Spider Eye, Potion of Swiftness + -> Potion of Slowness +
+r130; f108, f134; f151; 1; Glowstone Dust, Potion of Slowness -> Potion of Slowness II
+r131; f20, f135; f152; 1; Redstone, Potion of Leaping -> Potion of Leaping +
+r132; f20, f135; f153; 1; Redstone, Potion of Leaping -> Potion of Leaping II
+r133; f124, f152; f150; 1; Fermented Spider Eye, Potion of Leaping + -> Potion of Slowness +
+r134; f20, f136; f154; 1; Redstone, Potion of Strength -> Potion of Strength +
+r135; f108, f136; f155; 1; Glowstone Dust, Potion of Strength -> Potion of Strength II
+r136; f108, f137; f156; 1; Glowstone Dust, Potion of Healing -> Potion of Healing II
+r137; f108, f138; f157; 1; Glowstone Dust, Potion of Harming -> Potion of Harming II
+r138; f124, f156; f157; 1; Fermented Spider Eye, Potion of Healing II -> Potion of Harming II
+r139; f108, f139; f158; 1; Glowstone Dust, Potion of Poison -> Potion of Poison II
+r140; f20, f139; f159; 1; Redstone, Potion of Poison -> Potion of Poison +
+r141; f124, f158; f157; 1; Fermented Spider Eye, Potion of Poison II -> Potion of Harming II
+r142; f20, f140; f160; 1; Redstone, Potion of Regeneration -> Potion of Regeneration +
+r143; f108, f140; f161; 1; Glowstone Dust, Potion of Regeneration -> Potion of Regeneration II
+r144; f20, f141; f162; 1; Redstone, Potion of Fire Resistance -> Potion of Fire Resistance +
+r145; f20, f142; f163; 1; Redstone, Potion of Water Breathing -> Potion of Water Breathing +
+r146; f20, f143; f164; 1; Redstone, Potion of Night Vision -> Potion of Night Vision +
+r147; f20, f144; f165; 1; Redstone, Potion of Invisibility -> Potion of Invisibility +
+r148; f124, f164; f165; 1; Fermented Spider Eye, Potion of Night Vision + -> Potion of Invisibility +
+r149; f20, f145; f166; 1; Redstone, Potion of Turtle Master -> Potion of Turtle Master +
+r150; f108, f145; f167; 1; Glowstone Dust, Potion of Turtle Master -> Potion of Turtle Master II
+r151; f20, f146; f168; 1; Redstone, Potion of Slow Falling -> Potion of Slow Falling +
+r152; f20, f147; f169; 1; Redstone, Potion of Weakness -> Potion of Weakness +
