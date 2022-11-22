@@ -111,9 +111,10 @@ class App(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.title('Production System')
+        self.title('Продукционная система "Крафт предметов"')
         self.minsize(1000, 400)
         self.geometry('1000x400')
+        self.iconbitmap('mine.ico')
         self.facts = []
         self.rules = []
         self._inv = []
