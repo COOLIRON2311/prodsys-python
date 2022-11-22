@@ -179,8 +179,11 @@ class App(tk.Tk):
 
     def fill_inv_tar(self):
         for fact in self.facts:
-            if fact.is_atom or fact.desc == 'Iron Ingot':
+            if fact.is_atom:
                 self._inv.append(fact)
+            elif fact.desc == 'Iron Ingot':
+                self._inv.append(fact)
+                self._tar.append(fact)
             else:
                 self._tar.append(fact)
 
