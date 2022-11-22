@@ -167,3 +167,7 @@ r149; f20, f145; f166; 1; Redstone, Potion of Turtle Master -> Potion of Turtle 
 r150; f108, f145; f167; 1; Glowstone Dust, Potion of Turtle Master -> Potion of Turtle Master II
 r151; f20, f146; f168; 1; Redstone, Potion of Slow Falling -> Potion of Slow Falling +
 r152; f20, f147; f169; 1; Redstone, Potion of Weakness -> Potion of Weakness +
+
+r153; f15; f170; 1; Iron Ingot -> Iron Block
+r154; f170; f171; 1; Iron Block -> Iron Block +
+r155; f171; f15; 1; Iron Block + -> Iron Ingot

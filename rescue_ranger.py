@@ -15,8 +15,8 @@ class Fact:
     def parse(data: str) -> 'Fact':
         # print(data)
         try:
-            _id, desc, _ = map(str.strip, data.split(';'))
-            return Fact(_id, desc)
+            iid, desc, _ = map(str.strip, data.split(';'))
+            return Fact(iid, desc)
         except ValueError as e:
             raise ValueError(f'Invalid fact: {data}') from e
 
@@ -47,10 +47,10 @@ class Rule:
     def parse(data: str) -> 'Rule':
         # print(data)
         try:
-            _id, lhs, rhs, _, desc = map(str.strip, data.split(';'))
+            iid, lhs, rhs, _, desc = map(str.strip, data.split(';'))
             lhs = set(map(str.strip, lhs.split(',')))
             rhs = set(map(str.strip, rhs.split(',')))
-            return Rule(_id, desc, lhs, rhs)
+            return Rule(iid, desc, lhs, rhs)
         except ValueError as e:
             raise ValueError(f'Invalid rule: {data}') from e
 

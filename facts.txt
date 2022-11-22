@@ -183,3 +183,6 @@ f166; Potion of Turtle Master +;
 f167; Potion of Turtle Master II;
 f168; Potion of Slow Falling +;
 f169; Potion of Weakness +;
+
+f170; Iron Block;
+f171; Iron Block +;

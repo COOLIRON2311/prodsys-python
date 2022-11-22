@@ -20,8 +20,8 @@ class Fact:
     def parse(data: str) -> 'Fact':
         # print(data)
         try:
-            _id, desc, _ = map(str.strip, data.split(';'))
-            return Fact(_id, desc)
+            iid, desc, _ = map(str.strip, data.split(';'))
+            return Fact(iid, desc)
         except ValueError as e:
             raise ValueError(f'Invalid fact: {data}') from e
 
@@ -53,10 +53,10 @@ class Rule:
     def parse(data: str) -> 'Rule':
         # print(data)
         try:
-            _id, lhs, rhs, _, desc = map(str.strip, data.split(';'))
+            iid, lhs, rhs, _, desc = map(str.strip, data.split(';'))
             lhs = set(map(str.strip, lhs.split(',')))
             rhs = set(map(str.strip, rhs.split(',')))
-            return Rule(_id, desc, lhs, rhs)
+            return Rule(iid, desc, lhs, rhs)
         except ValueError as e:
             raise ValueError(f'Invalid rule: {data}') from e
 
@@ -141,7 +141,7 @@ class App(tk.Tk):
         self.status = tk.Text(self.frame1, width=40, height=20, state=tk.DISABLED)
         self.label1 = tk.Label(self.frame1, text='Инвентарь\n->')
         self.label2 = tk.Label(self.frame1, text='Сделать\n->')
-        self.directb = tk.Button(self.frame2, text='Прямой Вывод', command=self.direct)
+        self.directb = tk.Button(self.frame2, text='Прямой Вывод', command=self.forward)
         self.reverseb = tk.Button(self.frame2, text='Обратный Вывод', command=self.reverse)
 
         self.frame1.pack(side='top', padx=10, pady=10, fill='both', expand=True)
@@ -179,7 +179,7 @@ class App(tk.Tk):
 
     def fill_inv_tar(self):
         for fact in self.facts:
-            if fact.is_atom:
+            if fact.is_atom or fact.desc == 'Iron Ingot':
                 self._inv.append(fact)
             else:
                 self._tar.append(fact)
@@ -203,7 +203,7 @@ class App(tk.Tk):
         self.targets.selection_clear(0, tk.END)
         self.inventory.selection_clear(0, tk.END)
 
-    def direct(self):
+    def forward(self):
         facts = {self._inv[i].iid for i in self.inventory.curselection()}
         target = self._tar[self.targets.curselection()[0]].iid
         prev_step = facts.copy()
