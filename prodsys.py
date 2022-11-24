@@ -102,6 +102,15 @@ class Node:
     def is_leaf(self):
         return len(self.children) == 0
 
+    def clear_path(self):
+        q: list['Node'] = [self]
+
+        while q:
+            node = q.pop()
+            node.path = []
+            for child in node.children:
+                q.append(child)
+
 
 class App(tk.Tk):
     facts: list[Fact]
@@ -282,6 +291,8 @@ class App(tk.Tk):
                         n.rule = new_rules[i]
                         a.children.append(n)
                         q1.put(n)
+
+        # root.clear_path()
 
         def _eval(root: Node):
             if root.is_leaf:
