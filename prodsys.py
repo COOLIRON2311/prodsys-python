@@ -237,6 +237,7 @@ class App(tk.Tk):
             prev_step = cur_step.copy()
         if target not in cur_step:
             self._clear_status()
+            self._open_status()
             self.status.insert(tk.END, self.pad_str('Item can\'t be crafted'))
         self._close_status()
 
